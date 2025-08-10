@@ -1,0 +1,19 @@
+接线说明：
+1. 供电连接：
+   - 按键模块的 V 引脚 → ESP32-S3 的 3.3V
+   - 按键模块的 G 引脚 → ESP32-S3 的 GND
+
+2. 信号连接：
+   - 按键模块的 1 引脚 → ESP32-S3 的 10 引脚
+   - 按键模块的 2 引脚 → ESP32-S3 的 11 引脚
+   - 按键模块的 3 引脚 → ESP32-S3 的 12 引脚
+   - 按键模块的 4 引脚 → ESP32-S3 的 13 引脚
+
+3. 代码建议：
+   - 按下输出低电平
+   - 在 Arduino 中初始化引脚为 INPUT_PULLUP（启用内部上拉）：
+     pinMode(10, INPUT_PULLUP);
+     pinMode(11, INPUT_PULLUP);
+     pinMode(12, INPUT_PULLUP);
+     pinMode(13, INPUT_PULLUP);
+     digitalRead(10) == LOW → 按键1按下
